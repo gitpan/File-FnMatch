@@ -1,7 +1,13 @@
 use 5.004;
 use ExtUtils::MakeMaker;
+
+die <<__mswin32 if $^O =~ /^MSWin32$/i;
+Windows does not offer a native fnmatch implementation, and this
+version of File::FnMatch does not supply one.
+__mswin32
+
 #
-# $Id: Makefile.PL,v 1.1.1.1 2005/03/11 05:41:23 mjp Exp $
+# $Id: Makefile.PL,v 1.2 2005/03/30 05:34:57 mjp Exp $
 #
 # See lib/ExtUtils/MakeMaker.pm for details of how to influence
 # the contents of the Makefile that is written.

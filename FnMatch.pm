@@ -1,6 +1,6 @@
 package File::FnMatch;
 
-# $Id: FnMatch.pm,v 1.1.1.1 2005/03/11 05:41:23 mjp Exp $
+# $Id: FnMatch.pm,v 1.2 2005/03/30 05:34:57 mjp Exp $
 
 use 5.004;
 use strict;
@@ -10,7 +10,7 @@ require DynaLoader;
 use vars qw($VERSION @ISA @EXPORT_OK %EXPORT_TAGS);
 @ISA = qw(Exporter DynaLoader);
 
-$VERSION = '0.01';
+$VERSION = '0.02';
 
 bootstrap File::FnMatch $VERSION;
 
@@ -22,6 +22,8 @@ bootstrap File::FnMatch $VERSION;
 
 1;
 __END__
+=pod
+
 =head1 NAME
 
 File::FnMatch - simple filename and pathname matching
@@ -98,6 +100,11 @@ support named character classes such as C<[[:xdigit:]]>.  Character sets
 may be negated with an initial '!' (C<[![:space:]]>).
 
 Locale influences the meaning of fnmatch() patterns.  
+
+=head1 CAVEATS
+
+Most UNIX-like systems provide an fnmatch implementation.  This module will
+not work on platforms lacking an implementation, most notably Win32.
 
 =head1 SEE ALSO
 

@@ -2,11 +2,13 @@
 #include "perl.h"
 #include "XSUB.h"
 
+#define NEED_newCONSTSUB
+#define NEED_sv_2pv_nolen
 #include "ppport.h"
 
 #include <fnmatch.h>
 
-/* $Id: FnMatch.xs,v 1.1.1.1 2005/03/11 05:41:23 mjp Exp $ */
+/* $Id: FnMatch.xs,v 1.2 2005/03/30 05:34:57 mjp Exp $ */
 
 MODULE = File::FnMatch		PACKAGE = File::FnMatch		
 

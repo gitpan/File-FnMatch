@@ -5,6 +5,11 @@ File::FnMatch exposes your system's fnmatch(3) capabilities to Perl.
 While considerably less powerful than regular expressions, shell-style
 patterns are yet useful and familiar to a large audience of end-users.
 
+----------------------------------------------------------------------
+N.B.:  Some platforms, notably Win32, do not supply an fnmatch
+       implementation.  This module will not build on those platforms.
+----------------------------------------------------------------------
+
 Briefly:
 
    use File::FnMatch qw(:fnmatch);
